@@ -28,6 +28,10 @@ endif
 syntax enable
 colorscheme dracula
 
+
+" Transparent background
+let g:transparent_enabled = v:false
+
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeIgnore = []
@@ -45,7 +49,7 @@ let g:fzf_action = {
   \}
 " requires silversearcher-ag
 " used to ignore gitignore files
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+let $FZF_DEFAULT_COMMAND = 'rg --files --follow --no-ignore-vcs --hidden -g "!{node_modules/*,.git/*}"'
 
 " open new split panes to right and below
 set splitright
