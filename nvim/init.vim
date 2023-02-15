@@ -30,7 +30,7 @@ colorscheme dracula
 
 
 " Transparent background
-let g:transparent_enabled = v:false
+let g:transparent_enabled = v:true
 
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 1
@@ -74,7 +74,13 @@ au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 " open terminal on ctrl+;
 " uses zsh instead of bash
 function! OpenTerminal()
-  split term://bash
+  split term://zsh
   resize 10
 endfunction
 nnoremap <c-n> :call OpenTerminal()<CR>
+
+" For showing line numbers
+set number
+
+
+

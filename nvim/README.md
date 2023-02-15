@@ -9,5 +9,5 @@
 │   └── transparent.vim
 │
 ├── init.vim
-├── init.vim.bkp
+├── .init.vim.bkp
 └── README.md
