@@ -105,7 +105,7 @@ endfunction
 let g:fern#disable_default_mappings = 1
 
 " Toggle fern with \f in COMMAND MODE
-noremap <silent> <Leader>t :Fern . -drawer -reveal=% -toggle -width=35<CR>
+noremap <silent> <Leader>f :Fern . -drawer -reveal=% -toggle -width=35<CR>
 
 function! FernInit() abort
   nmap <buffer><expr>
