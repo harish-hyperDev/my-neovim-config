@@ -47,6 +47,7 @@ let g:loaded_netrwPlugin = 1
 let g:loaded_netrwSettings = 1
 let g:loaded_netrwFileHandlers = 1
 
+
 augroup my-fern-hijack
   autocmd!
   autocmd BufEnter * ++nested call s:hijack_directory()
@@ -136,7 +137,25 @@ augroup FernGroup
 augroup END
 " Fern settings end-2
 
+" ----- Autocomplete on Tab key -----
 
+" Tab completion
+" will insert tab at beginning of line,
+" will use completion if not at beginning
+
+set wildmode=list:longest,list:full
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+inoremap <expr> <tab> InsertTabWrapper()
+inoremap <s-tab> <c-n>
+
+let g:fern#renderer = "vim-devicons"
 
 " Setting tabs to 4
 filetype plugin indent on
